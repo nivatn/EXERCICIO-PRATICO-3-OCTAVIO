@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  max-width: 1080px;
+  margin: 20px auto;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 60px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+form {
+  margin: auto auto auto auto;  
+  padding: 24px;
+  text-align: left;
+  border-radius: 12px;
+  box-shadow: 0 4px 4px #000, 0 12px 12px #000;
+  width: 500px;
+}
+
+label {
+  font-size: 18px;
+}
+
+input,
+button {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
+              linear-gradient(45deg, #fff 0%, #537fe7 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 12px 24px;
+  margin-top: 8px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+input {
+  width: 300px;
+}
+
+button:hover {
+  background: linear-gradient(#537fe7, #1e1e1e) padding-box,
+              linear-gradient(45deg, #537fe7, #fff) border-box;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #537fe7;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+input:focus {
+  outline: none;
+  border-color: #537fe7;
+  box-shadow: 0 0 6px #537fe7;
+}
+
+li {list-style: "✦  "; color: #fff}
+
+    </style>
+</head>
+<body>
+    <header><h2>Exercício 3<br>Praticando HTML, CSS e JavaScript</h2></header>
+    <form>
+        <h1>Gerador de Lista</h1>
+        <input type="text" id="itens" placeholder="Digite a quantidade de itens">
+        <button type="button" onclick="gerarLista()">Gerar Lista</button>
+        <p id="mensagem"><br></p>
+        <ul id="lista"></ul>
+    </form>
+<script>
+    function gerarLista() {
+      const input = document.getElementById("itens");
+      const mensagem = document.getElementById("mensagem");
+      const lista = document.getElementById("lista");
+
+      const valor = parseInt(input.value);
+      lista.innerHTML = "";
+      mensagem.textContent = "";
+
+      if (isNaN(valor) || valor <= 0) {
+        mensagem.textContent = "Por favor, insira um número válido.";
+        return;
+      }
+
+      for (let i = 1; i <= valor; i++) {
+        const li = document.createElement("li");
+        li.textContent = `Octavio Marques ${i}`;
+        lista.appendChild(li);
+      }
+
+      mensagem.textContent = "";
+    }
+  </script>
+</body>
+</html>
